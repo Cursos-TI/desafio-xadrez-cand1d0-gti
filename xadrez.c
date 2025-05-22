@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 // Desafio de Xadrez - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
@@ -6,28 +7,35 @@
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-    char torre[100]="", bispo[100]="", rainha[100]="";
+    char torre[200]="", bispo[200]="", rainha[200]="";
+    int i; 
+    
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-    for (int i=1; i<=5; i++)
-    {
-        strcat(torre,"direita\n");
+    for (int i=1; i<=5; i++) {
+        strcat(bispo,"direita,");
+        strcat(bispo," cima\n");
     }
-    printf(torre);    // Implementação de Movimentação da Torre
+    printf("Movimento do bispo:\n%s\n",bispo);
+    
+    // Implementação de Movimentação da Torre
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-    for (int i=1; i<=5; i++)
-    {
+    i=1;
+    while (i<=5) {
         strcat(torre,"direita\n");
+        i++;
     }
-    printf(torre);
+    printf("Movimento da torre:\n%s\n",torre);
     
     // Implementação de Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-for (int i=1; i<=5; i++)
-    {
-        strcat(torre,"direita\n");
-    }
-    printf(torre);
+    i=1;
+    do {
+        strcat(rainha,"esquerda\n");
+        i++;
+    } while (i<=8);
+    printf("Movimento da rainha:\n%s\n",rainha);
+
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical.
